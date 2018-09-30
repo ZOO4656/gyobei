@@ -6,6 +6,7 @@ public class Fishing : MonoBehaviour {
 	
 	//todo:"fish"タグを持つオブジェクトを格納する箇所を作成する。
 	public GameObject fish;
+	public GameObject frod;
 
 
 	// Use this for initialization
@@ -48,13 +49,12 @@ public class Fishing : MonoBehaviour {
 	//魚を釣り上げた時の処理
 	public void Pullin() {
 		Debug.Log("魚を釣った");
-		Transform mypos = fish.transform;
-		Vector3 pos = mypos.position;
+		Transform fishpos = fish.transform;
+		Vector3 pos = fishpos.position;
 		pos.y += 1f;
-		mypos.position = pos;
+		fishpos.position = pos;
 
-		// fishpos.transform.position = new Vectore3(fishpos.x, fishpos.y + 10f,fishpos.z);
-		// fish.transform.position = fishpos.transform.position;
+		frod.transform.rotation = Quaternion.Euler(0, 88, -30); //釣り竿の角度変更
 	}
 
 }
