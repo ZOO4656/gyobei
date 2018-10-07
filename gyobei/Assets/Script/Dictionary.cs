@@ -15,7 +15,4 @@ public string style = "Dictionary";
 		
 	}
 
-	void OnGUI() {
-		GUI.Label(new Rect(100,100, 200, 100),	"style");
-	}
 }

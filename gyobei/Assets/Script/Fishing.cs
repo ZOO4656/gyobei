@@ -51,7 +51,7 @@ public class Fishing : MonoBehaviour {
 		Debug.Log("魚を釣った");
 		Transform fishpos = fish.transform;
 		Vector3 pos = fishpos.position;
-		pos.y += 1f;
+		pos.y = 0f;
 		fishpos.position = pos;
 
 		frod.transform.rotation = Quaternion.Euler(0, 88, -30); //釣り竿の角度変更
