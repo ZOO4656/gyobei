@@ -2,7 +2,8 @@
 	PImage player_isFishing;
 	boolean key_isPressed = false;
 
-	int pressed_Number;
+	String[] pressed_Number = {"A", "B", "C", "D", "E", "F", "G"};
+	String pressed_Number2 = "A";
 	boolean pressed_countLock = false;
 
 void setup() {
@@ -16,8 +17,8 @@ void draw() {
 	if (key_isPressed) {
 		image(player_isFishing, 100, 100, 300, 300);
 		if(pressed_countLock == false) {
-			int random = int(random(1,6));
-			pressed_Number = random;
+			int random = int(random(7));
+			pressed_Number2 = pressed_Number[random];
 			pressed_countLock = true;
 		}
 	}else{
@@ -28,7 +29,7 @@ void draw() {
 	}
 
 	fill(0);
-	text(pressed_Number,100,70);
+	text(pressed_Number2,100,70);
 }
 
 void keyPressed() {
