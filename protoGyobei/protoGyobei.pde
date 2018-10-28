@@ -3,13 +3,18 @@
 	boolean key_isPressed = false;
 
 	String[] pressed_Number = {"A", "B", "C", "D", "E", "F", "G"};
-	String pressed_Number2 = "A";
+	String[] pressed_Number2 = new String[2000];
 	boolean pressed_countLock = false;
+	int counter = 0;
 
 void setup() {
 	size(500,500);
 	player_isWait = loadImage("human1.png");
 	player_isFishing = loadImage("human2.png");
+
+	for (int i = 0; i < pressed_Number2.length; i++) {
+		pressed_Number2[i] = "";
+	}
 }
 
 void draw() {
@@ -18,7 +23,12 @@ void draw() {
 		image(player_isFishing, 100, 100, 300, 300);
 		if(pressed_countLock == false) {
 			int random = int(random(7));
-			pressed_Number2 = pressed_Number[random];
+			pressed_Number2[counter] = pressed_Number[random];
+
+			for (int i = 0; i <pressed_Number2.length; i++ ) {
+				text(pressed_Number2[i],100 + i*10,70);
+			}
+			counter++;
 			pressed_countLock = true;
 		}
 	}else{
@@ -29,7 +39,6 @@ void draw() {
 	}
 
 	fill(0);
-	text(pressed_Number2,100,70);
 }
 
 void keyPressed() {
