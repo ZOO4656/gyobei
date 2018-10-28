@@ -1,16 +1,20 @@
-	PImage player;
+	PImage player_isWait;
+	PImage player_isFishing;
 	boolean key_isPressed = false;
 
 void setup() {
 	size(500,500);
-	player = loadImage("human1.png");
+	player_isWait = loadImage("human1.png");
+	player_isFishing = loadImage("human2.png");
 }
 
 void draw() {
 	background(255);
 	if (key_isPressed){
-	image(player, 200, 250, 100, 100);
+
+	image(player_isFishing, 100, 100, 300, 300);
 	}else{
+	image(player_isWait, 100, 100, 300, 300);
 	}
 }
 
