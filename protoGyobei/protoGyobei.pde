@@ -6,6 +6,7 @@
 	String[] pressed_Number2 = new String[2000];
 	boolean pressed_countLock = false;
 	int counter = 0;
+	boolean is_duplicated = false;
 
 void setup() {
 	size(500,500);
@@ -23,12 +24,20 @@ void draw() {
 		image(player_isFishing, 100, 100, 300, 300);
 		if(pressed_countLock == false) {
 			int random = int(random(7));
-			pressed_Number2[counter] = pressed_Number[random];
+			is_duplicated = false;
 
-			for (int i = 0; i <pressed_Number2.length; i++ ) {
-				text(pressed_Number2[i],100 + i*10,70);
+			for (int i = 0; i < pressed_Number2.length; i++) {
+				if (pressed_Number2[i] == pressed_Number[random]) {
+					is_duplicated = true;
+				}
 			}
-			counter++;
+
+			if (is_duplicated == false) {
+				pressed_Number2[counter] = pressed_Number[random];
+				counter++;
+			}
+
+
 			pressed_countLock = true;
 		}
 	}else{
@@ -39,6 +48,9 @@ void draw() {
 	}
 
 	fill(0);
+	for (int i = 0; i <pressed_Number2.length; i++ ) {
+		text(pressed_Number2[i],100 + i*10,70);
+	}
 }
 
 void keyPressed() {
