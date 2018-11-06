@@ -6,8 +6,9 @@
 	boolean show_fish = false;
 	int latestFishNumber;
 
-	int[] allFish = {1,2,3,4,5,6,7,8,9,10};	//釣った魚を格納
+	int[] allFish = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};	//釣った魚を格納
 	int[] dictionary = new int[2000];		//すべての魚を格納する図鑑
+	int[] timeZone = {6, 12, 18, 24};		//釣りの時間帯
 	boolean pressed_countLock = false;		//連続入力防止のための変数
 	int counter = 0;						//現在の番号を確認するための変数
 	int timeCounter = 0;
@@ -17,7 +18,7 @@ void setup() {
 	size(500,500);
 	player_isWait = loadImage("human1.png");
 	player_isFishing = loadImage("human2.png");
-	fishers = new PImage[10];				//魚の画像を配列に格納
+	fishers = new PImage[15];				//魚の画像を配列に格納
 	fishers[0] = loadImage("fish1.png");
 	fishers[1] = loadImage("fish2.png");
 	fishers[2] = loadImage("fish3.png");
@@ -28,8 +29,13 @@ void setup() {
 	fishers[7] = loadImage("fish8.png");
 	fishers[8] = loadImage("fish9.png");
 	fishers[9] = loadImage("fish10.png");
+	fishers[10] = loadImage("fish11.png");
+	fishers[11] = loadImage("fish12.png");
+	fishers[12] = loadImage("fish13.png");
+	fishers[13] = loadImage("fish14.png");
+	fishers[14] = loadImage("fish15.png");
 
-	back = new PImage[5];
+	back = new PImage[5];								//背景画像の設定
 	back[0] = loadImage("b_0.jpg");
 	back[1] = loadImage("b_1.jpg");
 	back[2] = loadImage("b_2.jpg");
@@ -39,16 +45,15 @@ void setup() {
 
 void draw() {
 	// background(255);									//背景を白色に初期化
-	int time = millis()/10000;
-	image(back[time%5], 0, 0, 500, 500);
+	int time = millis()/10000;							//ゲームが開始してからの時間を計測
+	image(back[time%5], 0, 0, 500, 500);				//ゲーム開始時間に変動し背景画像を変更
 
 	if (key_isPressed) {								//スペースキーが押されているかどうかを判定する
 		image(player_isFishing, 100, 150, 300, 300);	//釣り上げた際のキャラクターを描写
 		if(pressed_countLock == false) {				//ボタンの連続入力受付を行っていないか確認
-			int random = int(random(10));				//ランダムの数字を生成
+			int random = int(random(15));				//ランダムの数字を生成
 			latestFishNumber = random;					//最後に釣った魚の番号を変数に記憶
 			is_duplicated = false;						//ランダムで出た数字を今格納している数字がdictionaryに登録されているかどうかを判定するためのboolean変数
-
 			for (int i = 0; i < dictionary.length; i++) {
 				if (dictionary[i] == allFish[random]) {
 					is_duplicated = true;
@@ -64,9 +69,9 @@ void draw() {
 			pressed_countLock = true;
 		}
 			if(show_fish == true) {
-				image(fishers[allFish[latestFishNumber] -1], 310, 220, 70, 70);
+				image(fishers[allFish[latestFishNumber] -1], 315, 250, 70, 70);	//釣り上げた魚を見せる
 			}
-	}else{
+		}else{
 		image(player_isWait, 100, 150, 300, 300);
 		if (pressed_countLock == true) {
 			pressed_countLock = false;
@@ -82,13 +87,13 @@ void draw() {
 	}
 }
 
-void keyPressed() {
+void keyPressed() {					//スペースキーを押しているかの判定
 	if(keyCode == ' ') {
 		key_isPressed = true;
 	}
 }
 
-void keyReleased() {
+void keyReleased() {				//スペースキーを離しているかの判定
 	if(keyCode == ' ') {
 		key_isPressed = false;
 	}
