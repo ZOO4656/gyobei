@@ -8,11 +8,19 @@
 
 	int[] allFish = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};	//釣った魚を格納
 	int[] dictionary = new int[2000];		//すべての魚を格納する図鑑
-	int[] timeZone = {6, 12, 18, 24};		//釣りの時間帯
+	int[] currentPool = new int[0];
 	boolean pressed_countLock = false;		//連続入力防止のための変数
 	int counter = 0;						//現在の番号を確認するための変数
 	int timeCounter = 0;
 	boolean is_duplicated = false;			//釣り上げた魚が現在すでに釣っていないか確認をする。
+
+	int[][] fishPool= {
+		{1, 5, 6},			//プール0
+		{2, 14, 10},		//プール1
+		{3, 8, 9},			//プール2
+		{4, 12, 13},		//プール3
+		{7, 11}				//プール4
+	};
 
 void setup() {
 	size(500,500);
@@ -41,17 +49,21 @@ void setup() {
 	back[2] = loadImage("b_2.jpg");
 	back[3] = loadImage("b_3.jpg");
 	back[4] = loadImage("b_4.jpg");
+
 }
 
 void draw() {
-	// background(255);									//背景を白色に初期化
+	background(255);									//背景を白色に初期化
 	int time = millis()/10000;							//ゲームが開始してからの時間を計測
-	image(back[time%5], 0, 0, 500, 500);				//ゲーム開始時間に変動し背景画像を変更
+	int time_id = time % 5;
+	image(back[time_id], 0, 0, 500, 500);				//ゲーム開始時間に変動し背景画像を変更
+
+	currentPool = fishPool[time_id];
 
 	if (key_isPressed) {								//スペースキーが押されているかどうかを判定する
 		image(player_isFishing, 100, 150, 300, 300);	//釣り上げた際のキャラクターを描写
 		if(pressed_countLock == false) {				//ボタンの連続入力受付を行っていないか確認
-			int random = int(random(15));				//ランダムの数字を生成
+			int random = currentPool[int(random(currentPool.length))];			//プールの中から指定の数字をランダムで生成
 			latestFishNumber = random;					//最後に釣った魚の番号を変数に記憶
 			is_duplicated = false;						//ランダムで出た数字を今格納している数字がdictionaryに登録されているかどうかを判定するためのboolean変数
 			for (int i = 0; i < dictionary.length; i++) {
