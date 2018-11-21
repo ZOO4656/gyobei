@@ -1,11 +1,7 @@
 public class kita{
 	public static void main( String[] args ) {
-		int x = 19;
-		int y = 23;
-		int z;
+		int x = 10;
 
-		z = x*y;
-
-		System.out.println(z);
+		System.out.println(x*2+","+x*3+","+x*4);
 	}
 }
