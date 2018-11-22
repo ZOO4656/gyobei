@@ -5,10 +5,6 @@ public class kita{
 		BufferedReader text = new BufferedReader(new InputStreamReader(System.in));
 		int x = Integer.parseInt(text.readLine());
 		int y = Integer.parseInt(text.readLine());
-		System.out.println(x+y);
-		System.out.println(x-y);
-		System.out.println(x*y);
-		System.out.println(x/y);
-		System.out.println(x%y);
+		System.out.println((x+y)/2);
 	}
 }
