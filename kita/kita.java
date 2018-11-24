@@ -7,9 +7,13 @@ public class kita{
 		int x = Integer.parseInt(text.readLine());
 
 		if(x % 2 == 0) {
-			System.out.println("値は偶数です。");
-		}else{
-			System.out.println("値は奇数です。");
+			System.out.println("値は正の偶数です。");
+		}else if(x % 2 == 1) {
+			System.out.println("値は正の奇数です。");
+		}else if(x < 0 && x % 2 == 0) {
+			System.out.println("値は負の偶数です。");
+		}else {
+			System.out.println("値は負の奇数です。");
 		}
 	}
 }
