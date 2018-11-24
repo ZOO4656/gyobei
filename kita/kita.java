@@ -10,9 +10,9 @@ public class kita{
 		int y = Integer.parseInt(text.readLine());
 
 		if(x > y) {
-			System.out.println("大きい数字は"+x);
+			System.out.println("xはyより大きい");
 		}else{
-			System.out.println("大きい数字は"+y);
+			System.out.println("yはxより大きい");
 		}
 	}
 }
