@@ -9,6 +9,10 @@ public class kita{
 		System.out.println("変数yに入れる値を入力してください");
 		int y = Integer.parseInt(text.readLine());
 
-		if(x > y) {System.out.println("xはyより大きい。");}
+		if(x > y) {
+			System.out.println("大きい数字は"+x);
+		}else{
+			System.out.println("大きい数字は"+y);
+		}
 	}
 }
