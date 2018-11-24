@@ -3,16 +3,13 @@ import java.io.*;
 public class kita{
 	public static void main( String[] args ) throws IOException {
 		BufferedReader text = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("変数xに入れる値を入力してください");
+		System.out.println("整数値を入力してください");
 		int x = Integer.parseInt(text.readLine());
 
-		System.out.println("変数yに入れる値を入力してください");
-		int y = Integer.parseInt(text.readLine());
-
-		if(x > y) {
-			System.out.println("xはyより大きい");
+		if(x % 2 == 0) {
+			System.out.println("値は偶数です。");
 		}else{
-			System.out.println("yはxより大きい");
+			System.out.println("値は奇数です。");
 		}
 	}
 }
