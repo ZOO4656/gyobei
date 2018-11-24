@@ -3,17 +3,13 @@ import java.io.*;
 public class kita{
 	public static void main( String[] args ) throws IOException {
 		BufferedReader text = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("整数値を入力してください");
+		System.out.println("試験の点数を入力してください");
 		int x = Integer.parseInt(text.readLine());
 
-		if(x % 2 == 0) {
-			System.out.println("値は正の偶数です。");
-		}else if(x % 2 == 1) {
-			System.out.println("値は正の奇数です。");
-		}else if(x < 0 && x % 2 == 0) {
-			System.out.println("値は負の偶数です。");
+		if(x >= 60) {
+			System.out.println("合格");
 		}else {
-			System.out.println("値は負の奇数です。");
+			System.out.println("失格");
 		}
 	}
 }
