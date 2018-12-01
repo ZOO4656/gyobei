@@ -3,20 +3,16 @@ import java.io.*;
 public class kita{
 	public static void main( String[] args ) throws IOException {
 		BufferedReader text = new BufferedReader(new InputStreamReader(System.in));
-			// int x = Integer.parseInt(text.readLine());
-			int sum = 0;
-			int counter = 0;
-		for(int i = 1; i > 0; i++) {
-			System.out.println("数字を入力してください。ただし0を入力すると計算が終了します。");
+			String sum = "#";
+			int counter = 1;
+			System.out.println("数字を入力してください。");
 			int x = Integer.parseInt(text.readLine());
-			if(x != 0 ){
-				sum +=x;
-				counter++;
-			}else if(x == 0) {
-				break;
+		for(int i = 0; i < x; i++) {
+			for(int j = 0; j < counter; j++){
+				System.out.print(sum);
 			}
+				counter ++;
+				System.out.println();
 		}
-
-		System.out.println(sum/counter);
 	}
 }
