@@ -4,10 +4,12 @@ public class kita{
 	public static void main( String[] args ) throws IOException {
 		BufferedReader text = new BufferedReader(new InputStreamReader(System.in));
 			// int x = Integer.parseInt(text.readLine());
-		int j = 1;
-		for(int i = 2; i <= 7; i++) {
-			j *= i;
-			System.out.println(j);
+		int j = 0;
+		for(int i = 1; i <= 10; i++) {
+			System.out.println("数字を入力してください。");
+			int x = Integer.parseInt(text.readLine());
+			j += x;
 		}
+			System.out.println(j / 10);
 	}
 }
