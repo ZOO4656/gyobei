@@ -4,15 +4,21 @@ public class kita{
 	public static void main( String[] args ) throws IOException {
 		BufferedReader text = new BufferedReader(new InputStreamReader(System.in));
 			// int x = Integer.parseInt(text.readLine());
-			int t = 0;
-		for(int i = 1; t <= 100; i++) {
-			System.out.println("数字を入力してください");
+			int strike = 0;
+			int ball = 0;
+		for(int i = 1; i <= 10; i++) {
+			System.out.println("ストライク= 0 ボール= 1？");
 			int x = Integer.parseInt(text.readLine());
-			t += x;
-			if(t >= 100){
+			if(x == 0){
+				strike +=1;
+			}else if(x == 1){
+				ball +=1;
+			}
+
+			if(strike == 3 || ball ==4){
 				break;
 			}
 		}
-			System.out.println(t);
+			System.out.println(strike + "ストライク, " + ball + "ボール");
 	}
 }
