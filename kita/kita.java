@@ -4,17 +4,41 @@ import java.util.Random;
 public class kita{
 	public static void main( String[] args ) throws IOException {
 		BufferedReader num = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println(max(12,55,34));
-
+		three();
+		four();
+		five();
 	}
-	public static int max(int x, int y, int z) {
-		if(x > y && x > z) {
-			return x;
-		}else if(x < y && y > z){
-			return y;
-		}else if (x < z && y < z) {
-			return z;
+	public static void three() {
+		int widhtCounter = 1;
+		for(int i = 0; i < 3; i++) {
+			for(int j = 0; j < widhtCounter; j++) {
+				System.out.print("$");
+			}
+			System.out.println("");
+			widhtCounter++;
 		}
-		return x;
+		System.out.println("");
+	}
+	public static void four() {
+		int widhtCounter = 1;
+		for(int i = 0; i < 4; i++) {
+			for(int j = 0; j < widhtCounter; j++) {
+				System.out.print("$");
+			}
+			System.out.println("");
+			widhtCounter++;
+		}
+		System.out.println("");
+	}
+	public static void five() {
+		int widhtCounter = 1;
+		for(int i = 0; i < 5; i++) {
+			for(int j = 0; j < widhtCounter; j++) {
+				System.out.print("$");
+			}
+			System.out.println("");
+			widhtCounter++;
+		}
+	System.out.println("");
 	}
 }
