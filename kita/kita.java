@@ -4,37 +4,37 @@ import java.util.Random;
 public class kita{
 	public static void main( String[] args ) throws IOException {
 		BufferedReader num = new BufferedReader(new InputStreamReader(System.in));
-		three();
-		four();
-		five();
+		doru(3,'$');
+		parcent(5,'%');
+		shapent(7,'#');
 	}
-	public static void three() {
+	public static void doru(int x, char y) {
 		int widhtCounter = 1;
-		for(int i = 0; i < 3; i++) {
+		for(int i = 0; i < x; i++) {
 			for(int j = 0; j < widhtCounter; j++) {
-				System.out.print("$");
+				System.out.print(y);
 			}
 			System.out.println("");
 			widhtCounter++;
 		}
 		System.out.println("");
 	}
-	public static void four() {
+	public static void parcent(int x, char y) {
 		int widhtCounter = 1;
-		for(int i = 0; i < 4; i++) {
+		for(int i = 0; i < x; i++) {
 			for(int j = 0; j < widhtCounter; j++) {
-				System.out.print("$");
+				System.out.print(y);
 			}
 			System.out.println("");
 			widhtCounter++;
 		}
 		System.out.println("");
 	}
-	public static void five() {
+	public static void shapent(int x, char y) {
 		int widhtCounter = 1;
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < x; i++) {
 			for(int j = 0; j < widhtCounter; j++) {
-				System.out.print("$");
+				System.out.print(y);
 			}
 			System.out.println("");
 			widhtCounter++;
