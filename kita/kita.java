@@ -3,14 +3,12 @@ import java.util.Random;
 
 public class kita{
 	public static void main( String[] args ) throws IOException {
-		Test pomeranian = new Test("ポメラニアン");
-		pomeranian.SetName("coron");
-		pomeranian.SetAge(10);
-		pomeranian.ShowProfile();
+		Test coin = new Test();
+		for (int i = 1; i <= 10; i++) {
+			coin.AddCoins(500, 1);
+		}
 
-		Test pudol = new Test("プードル");
-		pudol.SetName("maron");
-		pudol.SetAge(15);
-		pudol.ShowProfile();
+		System.out.println(coin.GetCount(500));
+		System.out.println(coin.GetAmount());
 	}
 }
