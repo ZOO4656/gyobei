@@ -4,11 +4,18 @@ import java.util.Random;
 public class kita{
 	public static void main( String[] args ) throws IOException {
 		BufferedReader num = new BufferedReader(new InputStreamReader(System.in));
-		kuku(3);
+		sosu(10000,10100);
 	}
-	public static void kuku(int dan) {
-		for(int i = 1; i <= 9; i++) {
-			System.out.print(dan * i + ", ");
+	public static void sosu(int first, int end) {
+		for(int i = first; i <= end; i++) {
+			for(int j = 2; j <= (i/2); j++) {
+				if(i % j != 0) {
+					System.out.println(i);
+					break;
+				}else {
+					break;
+				}
+			}
 		}
 	}
 }
