@@ -7,5 +7,10 @@ public class kita{
 		pomeranian.SetName("coron");
 		pomeranian.SetAge(10);
 		pomeranian.ShowProfile();
+
+		Test pudol = new Test();
+		pudol.SetName("maron");
+		pudol.SetAge(15);
+		pudol.ShowProfile();
 	}
 }
