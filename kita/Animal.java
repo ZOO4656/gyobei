@@ -2,8 +2,8 @@ import java.io.*;
 import java.util.Random;
 
 public class Animal {
-    public static String Name;
-    public static int Age;
+    public String Name;
+    public int Age;
 
     public void ShowProfile()
     {
