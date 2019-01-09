@@ -6,4 +6,9 @@ public class Cat extends Animal {
         System.out.println("スースー");
     }
 
+	@Override
+	public void Speak() {
+		System.out.println("猫の鳴き声は、ニャー");
+	}
+
 }
