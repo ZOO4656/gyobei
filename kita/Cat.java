@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.Random;
 
 public class Cat extends Animal {
-    public static void sleep() {
+    public static void Sleep() {
         System.out.println("スースー");
     }
 
